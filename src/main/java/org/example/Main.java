@@ -13,6 +13,5 @@ public class Main {
         ContactDao contactService = context.getBean(ContactDao.class);
 
         List<Contact> contacts= contactService.addContacts("src/main/resources/contact-list.csv");
-        System.out.println(contacts);
     }
 }
