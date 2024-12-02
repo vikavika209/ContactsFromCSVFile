@@ -6,12 +6,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.List;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ContactServiceConfig.class);
-        ContactService contactService = context.getBean(ContactService.class);
+        ContactDao contactService = context.getBean(ContactDao.class);
 
         List<Contact> contacts= contactService.addContacts("src/main/resources/contact-list.csv");
         System.out.println(contacts);
